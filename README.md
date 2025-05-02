@@ -1,10 +1,14 @@
 # Transformers 처음부터 만들어보기
 
 ## Input Embedding이란?
-텍스트를 임베딩 벡터로 변환하는 과정. 트랜스포머에서는 512 크기의 임베딩 벡터로 바꾼다.
+**텍스트를 임베딩 벡터로 변환하는 과정.** 트랜스포머에서는 512 크기의 임베딩 벡터로 바꾼다. 코드에서 진행한 nn.Embedding(vocab_size, d_model)은 Dense Embedding으로서, 정수 인덱스를 고정 크기의 밀집 벡터(dense vector)로 바꿔주는 역할을 한다.
 
-## Positional Embedding이란?
-각 단어가 해당 문서에서 위치한 절대적 위치를 임베딩한 것. 딱 한번만 계산된 후, 학습이나 추론 과정에서 사용된다.
+## Positional Encoding이란?
+![positional_encoding.png](img/positional_encoding.png) <br>
+각 단어가 해당 문서에서 위치한 절대적 위치를 인코딩한 것. 딱 한번만 계산된 후, 학습이나 추론 과정에서 사용된다. <br>
+위치 인코딩은 pos(임베딩 벡터 개수)와 i(임베딩 차원 수)에 의존하므로, 같은 pos, i지만 다른 내용을 갖고 있는 두 임베딩의 위치 인코딩 값은 같다. <br>
+- **질문 : sin, cos은 왜 쓴걸까? 그리고 왜 두개를 다 쓴걸까? sin, cos 중 하나만 써도 변별력 있지 않나?**
+  - 하나의 삼각함수로만 인코딩하는 경우, 삼각함수의 주기가 2π이기에 주기를 지나친다면 처음 토큰과 값이 중복되는 문제가 발생한다. 그래서, 짝수번째는 sin, 홀수번째는 cos 함수를 사용해 중복을 최대한 없앤다.
 
 ## Encoder
 - 이번 코드에서는 Encoder 내 Layer Normalization(LN)을 총 3번 실행한다.
