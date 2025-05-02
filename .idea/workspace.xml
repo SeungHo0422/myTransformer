@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87e5262e-b51e-47d6-a095-b3d06ee1eb9b" name="변경" comment="feat: feedforwardlayer 모듈 추가">
-      <change afterPath="$PROJECT_DIR$/test/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/multiHeadAttention.py" afterDir="false" />
+    <list default="true" id="87e5262e-b51e-47d6-a095-b3d06ee1eb9b" name="변경" comment="docs: MultiHeadAttention 설명 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +131,7 @@
       <updated>1745776630156</updated>
       <workItem from="1745776631263" duration="2427000" />
       <workItem from="1745848184919" duration="1964000" />
-      <workItem from="1746128004989" duration="2435000" />
+      <workItem from="1746128004989" duration="4208000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 층 정규화 모듈 추가">
       <option name="closed" value="true" />
@@ -160,7 +157,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745783000795</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: MultiHeadAttention 테스트 코드 추가">
+      <option name="closed" value="true" />
+      <created>1746130672394</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1746130672394</updated>
+    </task>
+    <task id="LOCAL-00005" summary="docs: MultiHeadAttention 설명 추가">
+      <option name="closed" value="true" />
+      <created>1746130697353</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746130697353</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,10 +194,12 @@
     <MESSAGE value="feat: 층 정규화 모듈 추가" />
     <MESSAGE value="feat: gitignore 추가" />
     <MESSAGE value="feat: feedforwardlayer 모듈 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: feedforwardlayer 모듈 추가" />
+    <MESSAGE value="feat: MultiHeadAttention 테스트 코드 추가" />
+    <MESSAGE value="docs: MultiHeadAttention 설명 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: MultiHeadAttention 설명 추가" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Transformer$model.coverage" NAME="model 커버리지 결과" MODIFIED="1746130413689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Transformer$multiHeadAttention.coverage" NAME="multiHeadAttention 커버리지 결과" MODIFIED="1746130423187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/Transformer$multiHeadAttention.coverage" NAME="multiHeadAttention 커버리지 결과" MODIFIED="1746130542909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
 </project>
