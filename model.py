@@ -137,3 +137,30 @@ class ResidualConnection(nn.Module):
     def forward(self, x, sublayer):
         return x + self.dropout(sublayer(self.norm(x)))
 
+
+class EncoderBlock(nn.Module):
+
+    def __init__(self, self_attention_block: MultiHeadAttentionBlock, feed_forward_block: FeedForwardBlock,
+                 dropout: float) -> None:
+        super().__init__()
+        self.self_attention_block = self_attention_block
+        self.feed_forward_block = feed_forward_block
+        self.residual_connections = nn.ModuleList([ResidualConnection(dropout) for _ in range(2)])
+
+    def forward(self, x, src_mask):
+        x = self.residual_connections[0](x, lambda x: self.self_attention_block.attention(x, x, x, src_mask))  # 여기서 한번
+        x = self.residual_connections[1](x, self.feed_forward_block)  # 여기서 두번
+        return x
+
+
+class Encoder(nn.Module):
+
+    def __init__(self, layers: nn.ModuleList) -> None:
+        super().__init__()
+        self.layers = layers
+        self.norm = LayerNormalization()
+
+    def forward(self, x, mask):
+        for layer in self.layers:
+            x = layer(x, mask)
+        return self.norm(x)  # 질문 : 여기서 norm을 한번 더쳐주는 이유? (이게 세번)
